@@ -12,7 +12,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+app.use(express.json()); // parses application/json
+app.use(express.urlencoded({ extended: true })); // parses application/x-www-form-urlencoded
+
 app.use(cors());
 app.use(helmet()); // helmet is a security middleware that helps you to protect your app by setting various HTTP headers
 app.use(morgan("dev")); // log the requests 
