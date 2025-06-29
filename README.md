@@ -32,10 +32,9 @@ Follow these steps to set up and run the project locally.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/pern-ecom-api.git
+    git clone https://github.com/Tirth-955/pern-ecom-api.git
     cd pern-ecom-api
     ```
-    (Note: Replace `https://github.com/your-username/pern-ecom-api.git` with your actual repository URL)
 
 2.  **Navigate to the backend directory:**
     ```bash
@@ -83,6 +82,3 @@ The API provides the following endpoints for managing products:
 | `PUT`  | `/api/products/:id`  | Update an existing product | `{"name": "string", "price": "decimal", "image": "string"}` (all fields required) |
 | `DELETE` | `/api/products/:id` | Delete a product        | None                                              |
 
-## License
-
-This project is licensed under the ISC License. 
