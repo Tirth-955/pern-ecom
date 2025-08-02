@@ -17,7 +17,6 @@ export const getALlProducts = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Failed to fetch products",
-            error: error.message // In production, avoid sending raw error messages
         });
     }
 }
@@ -49,7 +48,7 @@ export const createProduct = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Failed to create products",
-            error: error.message // In production, avoid sending raw error messages
+            
         });
     }
 }
@@ -72,7 +71,7 @@ export const getProduct = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Internal Server Error",
-            error: error.message // In production, avoid sending raw error messages
+            
         });
     }
 }
@@ -92,8 +91,7 @@ export const updateProduct = async (req, res) => {
         if (updatedProduct.length === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Product Not Found",
-                error: error.message // In production, avoid sending raw error messages
+                message: "Product Not Found"
             });
         }
 
@@ -106,7 +104,7 @@ export const updateProduct = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Internal Server Error",
-            error: error.message // In production, avoid sending raw error messages
+            
         });
     }
 }
@@ -124,8 +122,7 @@ export const deleteProduct = async (req, res) => {
         if (deletedProduct.length === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Product Not Found",
-                error: error.message // In production, avoid sending raw error messages
+                message: "Product Not Found"
             });
         }
 
@@ -138,7 +135,7 @@ export const deleteProduct = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Internal Server Error",
-            error: error.message // In production, avoid sending raw error messages
+            
         });
     }
 }

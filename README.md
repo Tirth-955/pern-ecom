@@ -1,84 +1,87 @@
-# PERN E-commerce Backend API
+# PERN E-commerce API
 
-This project is the backend API for an e-commerce application, powered by the PERN stack (PostgreSQL, Express.js, Node.js). It handles all core product operations—creating, reading, updating, and deleting—and includes built-in security features with Arcjet for rate limiting and bot protection.
+A full-stack e-commerce application built with the PERN stack (PostgreSQL, Express, React, Node.js).
 
 ## Features
 
-*   **Product Management:** CRUD operations for product data (name, image, price).
-*   **Database Integration:** Seamless interaction with PostgreSQL for data storage.
-*   **API Endpoints:** Well-defined RESTful API for easy client integration.
-*   **Security:** Implements rate limiting and bot protection using Arcjet.
-*   **Middleware:** Utilizes `helmet` for HTTP header security and `morgan` for request logging.
-*   **CORS Enabled:** Configured for cross-origin resource sharing.
+- Product management (CRUD operations)
+- Responsive React frontend with Tailwind CSS
+- RESTful API with Express.js
+- PostgreSQL database with Neon
+- Security with Arcjet rate limiting
+- Real-time updates and notifications
 
-## Technologies Used
+## Tech Stack
 
-*   **Backend:** Node.js, Express.js
-*   **Database:** PostgreSQL (via Neon Database client)
-*   **Security:** Arcjet
-*   **Other Libraries:** `cors`, `dotenv`, `helmet`, `morgan`, `nodemon` (for development)
+**Frontend:**
+- React 18 + Vite
+- Tailwind CSS + DaisyUI
+- Zustand (state management)
+- React Router DOM
 
-## Getting Started
+**Backend:**
+- Node.js + Express
+- PostgreSQL (Neon)
+- Arcjet (security)
+- CORS, Helmet, Morgan
 
-Follow these steps to set up and run the project locally.
+## Quick Start
 
-### Prerequisites
+1. Clone and install:
+   ```bash
+   git clone https://github.com/Tirth-955/pern-ecom.git
+   cd pern-ecom
+   npm install
+   ```
 
-*   Node.js (LTS version recommended)
-*   npm (Node Package Manager)
-*   A PostgreSQL database (e.g., a free tier from [Neon](https://neon.tech/) or a local PostgreSQL instance).
+2. Set up environment variables in `.env`:
+   ```
+   PORT=3000
+   DATABASE_URL="your_postgres_connection_string"
+   ARCJET_KEY="your_arcjet_key"
+   ARCJET_ENV="development"
+   ```
 
-### Installation
+3. Start development:
+   ```bash
+   npm run dev
+   ```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Tirth-955/pern-ecom-api.git
-    cd pern-ecom-api
-    ```
+4. Open http://localhost:5173
 
-2.  **Navigate to the backend directory:**
-    ```bash
-    cd backend
-    ```
-
-3.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-### Environment Variables
-
-Create a `.env` file in the `backend` directory and add the following environment variables:
+## Project Structure
 
 ```
-PORT=5000
-DATABASE_URL="YOUR_NEON_POSTGRES_CONNECTION_STRING"
-ARCJET_KEY="YOUR_ARCJET_KEY"
+├── frontend/          # React app
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── store/
+│   └── package.json
+├── backend/           # Express API
+│   ├── controllers/
+│   ├── routes/
+│   ├── config/
+│   └── server.js
+└── package.json       # Root dependencies
 ```
-
-*   `PORT`: The port your server will run on (e.g., `5000`).
-*   `DATABASE_URL`: Your PostgreSQL connection string. If you're using Neon, this will be provided by them.
-*   `ARCJET_KEY`: Your API key for Arcjet. You can get one from [Arcjet](https://arcjet.com/).
-
-### Running the Server
-
-To start the development server with `nodemon`:
-
-```bash
-npm run dev
-```
-
-The server will be running at `http://localhost:5000` (or your specified `PORT`).
 
 ## API Endpoints
 
-The API provides the following endpoints for managing products:
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get single product
+- `POST /api/products` - Create product
+- `PUT /api/products/:id` - Update product
+- `DELETE /api/products/:id` - Delete product
 
-| Method | Endpoint             | Description             | Body (JSON)                                       |
-| :----- | :------------------- | :---------------------- | :------------------------------------------------ |
-| `GET`  | `/api/products`      | Get all products        | None                                              |
-| `GET`  | `/api/products/:id`  | Get a single product    | None                                              |
-| `POST` | `/api/products`      | Create a new product    | `{"name": "string", "price": "decimal", "image": "string"}` |
-| `PUT`  | `/api/products/:id`  | Update an existing product | `{"name": "string", "price": "decimal", "image": "string"}` (all fields required) |
-| `DELETE` | `/api/products/:id` | Delete a product        | None                                              |
+## Scripts
 
+- `npm run dev` - Start backend with nodemon
+- `npm run build` - Build frontend for production
+- `npm start` - Start production server
+
+## Environment
+
+- Frontend: http://localhost:5173
+- Backend: http://localhost:3000
+- Database: PostgreSQL (Neon)
