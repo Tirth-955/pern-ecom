@@ -7,7 +7,7 @@ export const getALlProducts = async (req, res) => {
             FROM products
             ORDER BY create_at DESC
         `;
-        console.log("Fetched Products", products);
+        // console.log("Fetched Products", products);
         res.status(200).json({
             success: true,
             data: products
@@ -37,7 +37,7 @@ export const createProduct = async (req, res) => {
             VALUES (${name}, ${price}, ${image})
             RETURNING * 
         `;
-        console.log("New product added", newProduct);
+        // console.log("New product added", newProduct);
 
         res.status(201).json({
             success: true,
@@ -135,7 +135,6 @@ export const deleteProduct = async (req, res) => {
         res.status(500).json({
             success: false,
             message: "Internal Server Error",
-            
         });
     }
 }
