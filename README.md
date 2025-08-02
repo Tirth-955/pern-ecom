@@ -1,4 +1,4 @@
-# PERN E-commerce API
+# PERN E-commerce 
 
 A full-stack e-commerce application built with the PERN stack (PostgreSQL, Express, React, Node.js).
 
@@ -31,7 +31,6 @@ A full-stack e-commerce application built with the PERN stack (PostgreSQL, Expre
    ```bash
    git clone https://github.com/Tirth-955/pern-ecom.git
    cd pern-ecom
-   npm install
    ```
 
 2. Set up environment variables in `.env`:
@@ -42,12 +41,16 @@ A full-stack e-commerce application built with the PERN stack (PostgreSQL, Expre
    ARCJET_ENV="development"
    ```
 
-3. Start development:
+3. Start server:
    ```bash
-   npm run dev
+   npm run build
    ```
 
-4. Open http://localhost:5173
+   ```bash
+   npm start
+   ```
+
+4. Open http://localhost:3000
 
 ## Project Structure
 
